@@ -580,7 +580,6 @@ GameObject:
   - component: {fileID: 992678404}
   - component: {fileID: 992678403}
   - component: {fileID: 992678402}
-  - component: {fileID: 992678401}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -603,23 +602,6 @@ Transform:
   m_Father: {fileID: 2078739821}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &992678401
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992678399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.5
-  m_FrequencyGain: 0.5
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &992678402
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -994,6 +976,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7133510638414276470, guid: 1aff36b87f91d4bae8a9a3bc232330bd,
+        type: 3}
+      propertyPath: tomatoPrefab
+      value: 
+      objectReference: {fileID: 9066660248813048013, guid: f5ac80f82d5dc41e6a1af00d40502d24,
+        type: 3}
+    - target: {fileID: 7133510638414276470, guid: 1aff36b87f91d4bae8a9a3bc232330bd,
+        type: 3}
+      propertyPath: kitchenObjectSo
+      value: 
+      objectReference: {fileID: 11400000, guid: b13d4fca8c55f44fca06f55d0420f4d4,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1067,6 +1061,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 7133510638414276470, guid: 1aff36b87f91d4bae8a9a3bc232330bd,
+        type: 3}
+      propertyPath: kitchenObjectSo
+      value: 
+      objectReference: {fileID: 11400000, guid: d059ef3b14ca14993814027c6e391b42,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
