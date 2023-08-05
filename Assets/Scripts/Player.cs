@@ -10,6 +10,8 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
         public BaseCounter selectedCounter;
     }
 
+    #region Variables
+
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask countersLayerMask;
@@ -20,6 +22,8 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
+    #endregion
+
     private void Awake() {
         if (Instance != null) Debug.LogError("There is more than one Player instance");
         Instance = this;
@@ -27,10 +31,19 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
 
     private void Start() {
         gameInput.OnInteractAction += GameInput_OnInteraction;
+        gameInput.OnInteractAlternateAction += GameInput_OnInteractionAlternateAction;
+    }
+
+    private void GameInput_OnInteractionAlternateAction(object sender, EventArgs e) {
+        if (selectedCounter != null) {
+            selectedCounter.InteractAlternate(this);
+        }
     }
 
     private void GameInput_OnInteraction(object sender, EventArgs e) {
-        if (selectedCounter != null) selectedCounter.Interact(this);
+        if (selectedCounter != null) {
+            selectedCounter.Interact(this);
+        }
     }
 
     private void Update() {
@@ -86,7 +99,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
 
             // Attempt only X movement
             var moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
-            canMove = !Physics.CapsuleCast(
+            canMove = moveDir.x !=0 && !Physics.CapsuleCast(
                 transform.position,
                 transform.position + Vector3.up * playerHeight,
                 playerRadius, moveDirX, moveDistance);
@@ -99,7 +112,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
 
                 // Attempt only Z movement
                 var moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
-                canMove = !Physics.CapsuleCast(
+                canMove = moveDir.z != 0 && !Physics.CapsuleCast(
                     transform.position,
                     transform.position + Vector3.up * playerHeight,
                     playerRadius, moveDirZ, moveDistance);
