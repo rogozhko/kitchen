@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 5543622158264342437}
   - component: {fileID: 2617132260872669042}
   - component: {fileID: 656276715099378739}
+  - component: {fileID: 7212819808934157942}
   m_Layer: 5
   m_Name: ProgerssBarUI
   m_TagString: Untagged
@@ -211,6 +212,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuttingCounter: {fileID: 3178320175930768946}
   barImage: {fileID: 2345315544391537806}
+--- !u!114 &7212819808934157942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301323820817965761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ea38c91cd0f4d54bd85adf42b02bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 2
 --- !u!1 &5924519086395986029
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 3706624529032696619, guid: 4c3bdc97ae033470b81ae123d4a42c2a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3706624529032696619, guid: 4c3bdc97ae033470b81ae123d4a42c2a,
         type: 3}
