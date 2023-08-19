@@ -105,7 +105,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
 
             // Attempt only X movement
             var moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
-            canMove = moveDir.x !=0 && !Physics.CapsuleCast(
+            canMove = (moveDir.x > -0.5f || moveDir.x > .5f) && !Physics.CapsuleCast(
                 transform.position,
                 transform.position + Vector3.up * playerHeight,
                 playerRadius, moveDirX, moveDistance);
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent {
 
                 // Attempt only Z movement
                 var moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
-                canMove = moveDir.z != 0 && !Physics.CapsuleCast(
+                canMove = (moveDir.z > -0.5f || moveDir.z > .5f) && !Physics.CapsuleCast(
                     transform.position,
                     transform.position + Vector3.up * playerHeight,
                     playerRadius, moveDirZ, moveDistance);
